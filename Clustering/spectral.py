@@ -16,7 +16,7 @@ class SpectralClustering:
         n = X.shape[0]
 
         W = self.init_weights(X)
-        D = np.diag([np.sqrt(i) for i in W.sum(axis=0)])
+        D = np.diag(W.sum(axis=0))
         self.L = D - W
         
         eigenvalues, eigenvectors = np.linalg.eig(self.L)
