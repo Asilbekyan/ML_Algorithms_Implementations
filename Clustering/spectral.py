@@ -50,6 +50,7 @@ if __name__ == '__main__':
     X, y_true = make_blobs(n_samples=500, centers=4, cluster_std=0.60, random_state=42)
 
     model = SpectralClustering(n_clusters=4)
+    
     y_pred = model.fit_predict(X)
     
     plt.scatter(X[:, 0], X[:, 1], c=y_pred, s=50, cmap='viridis')
